@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+     ************************************************************************
+     VMX22 Osprey simulation config.
+     ************************************************************************
+-->
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Bell Boeing VMX22 Osprey (Yasim)</description>
+    <author>BARANGER Emmanuel (3D), Maik Justus (FDM), Oliver Thurau (3D upgrade and FDM / XML upgrade)</author>
+    <status>alpha</status>
+    <aircraft-version>0.5-01.05.2010</aircraft-version>
+    <flight-model>yasim</flight-model>
+    <aero>vmx22</aero>
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/VMX22-Osprey/vmx22-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/VMX22-Osprey/Sounds/v22-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/VMX22-Osprey/Models/v22.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <v22>
+        <state type="int"> 0 </state>
+        <wing_state type="int"> 0 </wing_state>
+        <blade_folding type="float"> 0 </blade_folding>
+        <wing_rotation type="float"> 0 </wing_rotation>
+        <tilt type="float"> 0 </tilt>
+        <animation_tilt type="float"> 0 </animation_tilt>
+        <inputflaps type="float"> 0 </inputflaps>
+        <inputtilt type="float"> 0 </inputtilt>
+        <wingfoldincidence type ="float"> 0 </wingfoldincidence>
+        <wing>
+          <elevator type ="float"> 0 </elevator>
+          <aileron type="float"> 0 </aileron>
+          <rudder type="float"> 0 </rudder>
+          <flap type="float"> 0 </flap>
+        </wing>
+        <rotor>
+          <left>
+            <elevator type="float"> 0 </elevator>
+            <collective type="float"> 0 </collective>
+          </left>
+          <right>
+            <elevator type="float"> 0 </elevator>
+            <collective type="float"> 0 </collective>
+          </right>
+        </rotor>
+        <engine_right type="float">0.0</engine_right>
+        <engine_left type="float">0.0</engine_left>
+        <rotor-step-deg type="float"> -1.0 </rotor-step-deg>
+        <solver_throttle type="float">  0 </solver_throttle>
+        <wing_rotation_speed type ="float"> 0 </wing_rotation_speed>
+        <flap_speed type="float"> 0 </flap_speed>
+        <blade_folding_speed type="float"> 0 </blade_folding_speed>
+        <animation_tilt_speed type="float"> 0 </animation_tilt_speed>
+        <flight_computer>
+        <roll>
+          <p type ="float"> 1 </p>
+          <i type ="float"> 0 </i>
+          <d type ="float"> 1 </d>
+          <target_abs type ="float"> 0.004 </target_abs>
+          <target_rate type ="float"> 0.0015 </target_rate>
+          <max_i type ="float"> 0.5 </max_i>
+          <out type ="float"> 0 </out>
+          <enabled type ="int"> 1 </enabled>
+          <last_delta type ="float">0</last_delta>
+          <integral type="float">0</integral>
+        </roll>
+        <pitch>
+          <p type ="float"> 1 </p>
+          <i type ="float"> 0 </i>
+          <d type ="float"> 130 </d>
+          <target_abs type ="float"> -0.01 </target_abs>
+          <target_rate type ="float"> 0.0001 </target_rate>
+          <max_i type ="float"> 0.5 </max_i>
+          <out type ="float"> 0 </out>
+          <enabled type ="int"> 1 </enabled>
+          <last_delta type ="float">0</last_delta>
+          <integral type="float">0</integral>
+        </pitch>
+        </flight_computer>
+      </v22>
+    </model>
+		
+    <multiplay>
+      <generic>
+        <float n="0"></float>
+        <float n="1"></float>
+        <float n="2"></float>
+        <float n="3"></float>
+      </generic>
+    </multiplay>
+	
+	<weight n="0">
+		<name>Pilot</name>
+		<weight-lb>180</weight-lb>
+		<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="1">
+		<name>Co-Pilot</name>
+		<weight-lb>180</weight-lb>
+		<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="2">
+		<name>Right Passenger</name>
+		<weight-lb>0</weight-lb>
+		<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="3">
+		<name>Left Passenger</name>
+		<weight-lb>0</weight-lb>
+		<max-lb>300</max-lb>
+	</weight>
+
+	<weight n="4">
+		<name>Load</name>
+		<weight-lb>0</weight-lb>
+		<max-lb>10000</max-lb>
+	</weight>
+	
+	<submodels>
+		<serviceable type="bool">true</serviceable>
+		<path>Aircraft/VMX22-Osprey/Submodels/submodels.xml</path>
+	</submodels>
+
+
+    <help>
+      <title>Bell Boeing V22 Osprey - Background and Help</title>
+      <line></line>
+      <line>Informations about the V22 Osprey</line>
+      <line></line>
+      <key>
+        <name>}</name>
+        <desc>Start Engines</desc>
+      </key>
+      <key>
+        <name>{</name>
+        <desc>Stop Engines</desc>
+      </key>
+      <key>
+        <name>m</name>
+        <desc>Tilt Rotors fwd by 10 deg</desc>
+      </key>
+      <key>
+        <name>M</name>
+        <desc>Tilt Rotors aft by 10 deg</desc>
+      </key>
+      <key>
+        <name>Alt-m</name>
+        <desc>Tilt Rotors vertical</desc>
+      </key>
+      <key>
+        <name>n</name>
+        <desc>Unfold Wing</desc>
+      </key>
+      <key>
+        <name>N</name>
+        <desc>Fold Wing</desc>
+      </key>
+	  <key>
+        <name>e</name>
+        <desc>Cockpitdoor</desc>
+      </key>
+	  <key>
+        <name>d</name>
+        <desc>Crewdoor UP</desc>
+      </key>
+	  <key>
+        <name>D</name>
+        <desc>Crewdoor LO</desc>
+      </key>
+	  <key>
+        <name>s</name>
+        <desc>Cargodoor UP</desc>
+      </key>
+	  <key>
+        <name>c</name>
+        <desc>Cargodoor LO close</desc>
+      </key>
+	  <key>
+        <name>C</name>
+        <desc>Cargodoor LO open</desc>
+      </key>
+	  <key>
+        <name>f</name>
+        <desc>Air fuel probe</desc>
+      </key>
+	  <key>
+        <name>Ctrl-j</name>
+        <desc>Deploy Paratroopers - Jump signal</desc>
+      </key>
+      <text>
+        The tilt range is -10deg .. 0deg (vertical) .. 90deg (horitzontal)
+        The allowed tilt range is a function of the aircrafts speed.
+        The flight computer limits the actual tilt to this range.
+        Therefore you can lift of with vertical rotors and accelerate
+        like a helicopter.
+        The computer will increase the tilt with increasing airspeed.
+        For faster acceleration set the tilt to the maximum.
+        The Osprey can hover within a range of -10deg to 30deg.
+        You can set the tilt to horizontal/90deg on ground. Due to the
+        lack of speed the tilt is limited to 30deg max.
+      </text>
+    </help>
+
+    <flaps>
+      <setting>0.00</setting> <!-- Cruise -->
+      <setting>0.33</setting> <!--  -->
+      <setting>0.66</setting> <!--  -->
+      <setting>1.00</setting> <!-- Full -->
+    </flaps>
+
+    <menubar include="Dialogs/v22-menu.xml"/>
+
+  </sim>
+
+  <input>
+    <keyboard include="Nasal/v22-keyboard.xml"/>
+  </input>
+
+  <rotors>
+    <main>
+      <rpm type="double">0</rpm>
+      <blade>
+        <position-deg type="float">0</position-deg>
+        <incidence-deg type="float">0</incidence-deg>
+      </blade>
+    </main>
+  </rotors>
+
+  <surface-positions>
+    <flap-pos-norm type="float"> 0 </flap-pos-norm>
+  </surface-positions>
+  
+	<ai>
+		<submodels>
+		<trigger type="bool">false</trigger>
+		</submodels>
+	</ai>
+
+
+	<gear>
+		<gear n="0">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="1">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		<gear n="2">
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
+
+  
+  <nasal>
+    <v22>
+      <file>Aircraft/VMX22-Osprey/Nasal/v22.nas</file>
+      <file>Aircraft/VMX22-Osprey/Nasal/doors.nas</file>
+	  
+	  <file>Aircraft/VMX22-Osprey/Nasal/terrain_under.nas</file>
+	  
+	  <file>Aircraft/VMX22-Osprey/Nasal/tyresmoke.nas</file>
+	  
+      <file>Aircraft/VMX22-Osprey/Nasal/immat.nas</file>
+      <file>Aircraft/VMX22-Osprey/Nasal/light.nas</file>
+      <file>Aircraft/VMX22-Osprey/Nasal/liveries.nas</file>
+    </v22>
+  </nasal>
+
+</PropertyList>
+
