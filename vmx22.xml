@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- VMX-22 Version - 23.05.2010 -->
+<!-- VMX-22 Version - 24.05.2010 -->
 
 <airplane mass="50000">
 
@@ -176,13 +176,13 @@
 	<fuselage ax="-6.4" ay="0" az="-0.51" bx="-7.7" by="0" bz="-0.4" width="0.45" taper="0.35" midpoint="0.0" cx="0.015" cy="1" cz="0.35" idrag="0"/>
 	<fuselage ax="-6.4" ay="0.75" az="-0.51" bx="-7.7" by="0.75" bz="-0.4" width="0.45" taper="0.35" midpoint="0.0" cx="0.015" cy="1" cz="0.35" idrag="0"/>
 	
-	<!-- left engine x="1.57" y="7.041" z="2.550" -->
+	<!-- left engine x="1.57" y="7.041" z="2.550" 
 	<fuselage ax="1.57" ay="7.041" az="2.550" bx="1.77" by="7.041" bz="-1.83" width="1.2" taper="0.45" midpoint="0.5" cx="0.0" cy="0" cz="0.0" idrag="0"/>
-	<fuselage ax="2.20" ay="7.041" az="1.800" bx="2.20" by="7.041" bz="-1.83" width="1.0" taper="0.65" midpoint="0.5" cx="0.0" cy="0" cz="0.0" idrag="0"/>
+	<fuselage ax="2.20" ay="7.041" az="1.800" bx="2.20" by="7.041" bz="-1.83" width="1.0" taper="0.65" midpoint="0.5" cx="0.0" cy="0" cz="0.0" idrag="0"/>-->
 	
-	<!-- right engine x="1.57" y="-7.041" z="2.550" -->
+	<!-- right engine x="1.57" y="-7.041" z="2.550" 
 	<fuselage ax="1.57" ay="-7.041" az="2.550" bx="1.77" by="-7.041" bz="-1.83" width="1.2" taper="0.45" midpoint="0.5" cx="0.0" cy="0" cz="0.0" idrag="0"/>
-	<fuselage ax="2.20" ay="-7.041" az="1.800" bx="2.20" by="-7.041" bz="-1.83" width="1.0" taper="0.65" midpoint="0.5" cx="0.0" cy="0" cz="0.0" idrag="0"/>
+	<fuselage ax="2.20" ay="-7.041" az="1.800" bx="2.20" by="-7.041" bz="-1.83" width="1.0" taper="0.65" midpoint="0.5" cx="0.0" cy="0" cz="0.0" idrag="0"/>-->
 	
 
 	<!-- main wing -->

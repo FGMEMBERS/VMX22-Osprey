@@ -103,41 +103,40 @@
       </generic>
     </multiplay>
 	
-	<weight n="0">
-		<name>Pilot</name>
-		<weight-lb>180</weight-lb>
-		<max-lb>300</max-lb>
-	</weight>
+    <weight n="0">
+      <name>Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
 
-	<weight n="1">
-		<name>Co-Pilot</name>
-		<weight-lb>180</weight-lb>
-		<max-lb>300</max-lb>
-	</weight>
+    <weight n="1">
+      <name>Co-Pilot</name>
+      <weight-lb>180</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
 
-	<weight n="2">
-		<name>Right Passenger</name>
-		<weight-lb>0</weight-lb>
-		<max-lb>300</max-lb>
-	</weight>
+    <weight n="2">
+      <name>Right Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
 
-	<weight n="3">
-		<name>Left Passenger</name>
-		<weight-lb>0</weight-lb>
-		<max-lb>300</max-lb>
-	</weight>
+    <weight n="3">
+      <name>Left Passenger</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>300</max-lb>
+    </weight>
 
-	<weight n="4">
-		<name>Load</name>
-		<weight-lb>0</weight-lb>
-		<max-lb>10000</max-lb>
-	</weight>
+    <weight n="4">
+      <name>Load</name>
+      <weight-lb>0</weight-lb>
+      <max-lb>10000</max-lb>
+    </weight>
 	
-	<submodels>
-		<serviceable type="bool">true</serviceable>
-		<path>Aircraft/VMX22-Osprey/Submodels/submodels.xml</path>
-	</submodels>
-
+    <submodels>
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/VMX22-Osprey/Submodels/submodels.xml</path>
+    </submodels>
 
     <help>
       <title>Bell Boeing V22 Osprey - Background and Help</title>
@@ -247,42 +246,37 @@
     <flap-pos-norm type="float"> 0 </flap-pos-norm>
   </surface-positions>
   
-	<ai>
-		<submodels>
-		<trigger type="bool">false</trigger>
-		</submodels>
-	</ai>
+  <ai>
+    <submodels>
+      <trigger type="bool">false</trigger>
+    </submodels>
+  </ai>
 
-
-	<gear>
-		<gear n="0">
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-		</gear>
-		<gear n="1">
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-		</gear>
-		<gear n="2">
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-		</gear>
-	</gear>
-
+  <gear>
+    <gear n="0">
+      <tyre-smoke type="int">0</tyre-smoke>
+      <sprayspeed-ms type="double">0</sprayspeed-ms>
+      <spray-density type="double">0</spray-density>
+      <caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+    </gear>
+    <gear n="1">
+      <tyre-smoke type="int">0</tyre-smoke>
+      <sprayspeed-ms type="double">0</sprayspeed-ms>
+      <spray-density type="double">0</spray-density>
+    </gear>
+    <gear n="2">
+      <tyre-smoke type="int">0</tyre-smoke>
+      <sprayspeed-ms type="double">0</sprayspeed-ms>
+      <spray-density type="double">0</spray-density>
+    </gear>
+  </gear>
   
   <nasal>
     <v22>
       <file>Aircraft/VMX22-Osprey/Nasal/v22.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/doors.nas</file>
-	  
-	  <file>Aircraft/VMX22-Osprey/Nasal/terrain_under.nas</file>
-	  
-	  <file>Aircraft/VMX22-Osprey/Nasal/tyresmoke.nas</file>
-	  
+      <file>Aircraft/VMX22-Osprey/Nasal/terrain_under.nas</file> 
+      <file>Aircraft/VMX22-Osprey/Nasal/tyresmoke.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/immat.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/light.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/liveries.nas</file>
