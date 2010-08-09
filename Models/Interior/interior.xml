@@ -40,7 +40,7 @@
     <object-name>intvitres</object-name>
   </animation>
   
-  <!-- vmx22 model prototype colors START -->
+  <!-- vmx22 model prototype colors START 
   <animation>
     <type>material</type>
 	<texture>interior.png</texture>
@@ -55,6 +55,7 @@
 	<texture>floor.png</texture>
 	<object-name>floor_back</object-name>
   </animation>
+  -->
   
   <!-- <animation>
     <type>material</type>

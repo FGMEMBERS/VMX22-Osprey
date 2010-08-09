@@ -13,7 +13,7 @@
     <description>Bell Boeing VMX22 Osprey (Yasim)</description>
     <author>BARANGER Emmanuel (3D), Maik Justus (FDM), Oliver Thurau (3D upgrade and FDM / XML upgrade)</author>
     <status>alpha</status>
-    <aircraft-version>0.5-01.05.2010</aircraft-version>
+    <aircraft-version>0.55-01.08.2010</aircraft-version>
     <flight-model>yasim</flight-model>
     <aero>vmx22</aero>
     <fuel-fraction>0.8</fuel-fraction>
@@ -32,6 +32,7 @@
         <file type="string">default</file>
       </livery>
       <v22>
+		<immat>false</immat>
         <state type="int"> 0 </state>
         <wing_state type="int"> 0 </wing_state>
         <blade_folding type="float"> 0 </blade_folding>
@@ -92,6 +93,17 @@
         </pitch>
         </flight_computer>
       </v22>
+		<!-- set for landing lights OFF (0 default) on startup <property>sim/model/lights/landing-lights/state</property> -->
+		<!-- set for GIT landing lights OFF (0 default) on startup <property>sim/model/lights/git-landing-lights/state</property> -->
+		<!-- change state to 1 - to globaly set the GIT landing lights to ON for all mp vmx22 -->
+		<lights>
+			<landing-lights>
+			<state type="int">0</state>
+			</landing-lights>
+			<git-landing-lights>
+			<state type="int">0</state>
+			</git-landing-lights>
+		</lights>
     </model>
 		
     <multiplay>
@@ -100,6 +112,31 @@
         <float n="1"></float>
         <float n="2"></float>
         <float n="3"></float>
+		<!-- door mp - cargodoormix - down -->
+		<float n="4"></float>
+		<!-- door mp - cargodoorup -->
+        <float n="5"></float>
+		<!-- door mp - airfefule -->
+		<float n="6"></float>
+		<!-- door mp - cockpit -->
+		<float n="7"></float>
+		<!-- door mp - crew -->
+		<float n="8"></float>
+		<!-- door mp - crewup -->
+		<float n="9"></float>
+		<!-- gear agl meter mp - rotor particles animation -->
+		<float n="10"></float>
+		
+		<!-- collective left mp - rotor particles animation -->
+		<float n="13"></float>
+		<!-- collective right mp - rotor particles animation -->
+		<float n="14"></float>
+		<!-- landing lights animation mp - landing lights model position -->
+		<float n="15"></float>
+		
+		<!-- landing lights state mp -->
+		<int n="10"></int>
+		
       </generic>
     </multiplay>
 	
@@ -214,6 +251,13 @@
         The Osprey can hover within a range of -10deg to 30deg.
         You can set the tilt to horizontal/90deg on ground. Due to the
         lack of speed the tilt is limited to 30deg max.
+        
+        GIT landing lights and rotor visabilety
+        can be switched in the v22 dialog.
+        
+        VMX22-Osprey for FGFS GIT
+        (works with FGFS 2.0 - do not use GIT lights)
+        
       </text>
     </help>
 
@@ -240,6 +284,13 @@
         <incidence-deg type="float">0</incidence-deg>
       </blade>
     </main>
+	<tail>
+      <rpm type="double">0</rpm>
+      <blade>
+        <position-deg type="float">0</position-deg>
+        <incidence-deg type="float">0</incidence-deg>
+      </blade>
+    </tail>
   </rotors>
 
   <surface-positions>
@@ -275,7 +326,7 @@
     <v22>
       <file>Aircraft/VMX22-Osprey/Nasal/v22.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/doors.nas</file>
-      <file>Aircraft/VMX22-Osprey/Nasal/terrain_under.nas</file> 
+      <!--<file>Aircraft/VMX22-Osprey/Nasal/terrain_under.nas</file>-->
       <file>Aircraft/VMX22-Osprey/Nasal/tyresmoke.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/immat.nas</file>
       <file>Aircraft/VMX22-Osprey/Nasal/light.nas</file>

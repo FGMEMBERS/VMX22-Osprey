@@ -1,4 +1,5 @@
 # Maik Justus < fg # mjustus : de >, partly based on bo105.nas by Melchior FRANZ, < mfranz # aon : at >
+# updates for vmx22 version by Oliver Thurau
 
 if (!contains(globals, "cprint")) {
 	globals.cprint = func {};
@@ -326,6 +327,39 @@ var engine1 = props.globals.getNode("sim/model/v22/engine_right", 1);
 var engine2 = props.globals.getNode("sim/model/v22/engine_left", 1);
 var rotor = props.globals.getNode("controls/engines/engine/magnetos", 1);
 var rotor_rpm = props.globals.getNode("rotors/main/rpm", 1);
+
+
+# MP door/airrefule ======================================================
+# door cargodown - cargodoormix
+var door_cargodown = props.globals.getNode("instrumentation/doors/cargodoor/position-norm", 1);
+# door cargodoorup
+var door_cargoup = props.globals.getNode("instrumentation/doors/cargodoorup/position-norm", 1);
+# door airrefuel probe
+var door_fuelpr = props.globals.getNode("instrumentation/doors/airrefule/position-norm", 1);
+# door cockpit
+var door_cockpit = props.globals.getNode("instrumentation/doors/cockpitdoor/position-norm", 1);
+# door crew
+var door_crew = props.globals.getNode("instrumentation/doors/crew/position-norm", 1);
+# door crewup
+var door_crewup = props.globals.getNode("instrumentation/doors/crewup/position-norm", 1);
+
+# MP gear-agl-meter for rotor particle ====================================
+var gear_magl = props.globals.getNode("position/gear-agl-m", 1);
+
+# MP sim/model/v22/rotor/left/collective for rotor particle
+var collective_left = props.globals.getNode("sim/model/v22/rotor/left/collective", 1);
+
+# MP sim/model/v22/rotor/right/collective for rotor particle
+var collective_right = props.globals.getNode("sim/model/v22/rotor/right/collective", 1);
+
+# landing lights movement ====================================
+var light_position = props.globals.getNode("instrumentation/doors/landinglightpos/position-norm", 1);
+
+# landing lights state ====================================
+var l_light_state = props.globals.getNode("sim/model/lights/landing-lights/state", 1);
+
+
+
 var torque = props.globals.getNode("rotors/gear/total-torque", 1);
 var collective = props.globals.getNode("controls/engines/engine[0]/throttle", 1);
 var turbine = props.globals.getNode("sim/model/v22/turbine-rpm-pct", 1);
@@ -857,6 +891,44 @@ var update_mp_generics = func {
 	setprop("sim/multiplay/generic/float[1]", animation_tilt.getValue());
 	setprop("sim/multiplay/generic/float[2]", wing_rotation.getValue());
 	setprop("sim/multiplay/generic/float[3]", blade_incidence.getValue());
+	
+	
+	# door cargodown
+	setprop("sim/multiplay/generic/float[4]", door_cargodown.getValue());
+	# door cargoup
+	setprop("sim/multiplay/generic/float[5]", door_cargoup.getValue());
+	# door airrefule
+	setprop("sim/multiplay/generic/float[6]", door_fuelpr.getValue());
+	# door cockpit
+	setprop("sim/multiplay/generic/float[7]", door_cockpit.getValue());
+	# door crew
+	setprop("sim/multiplay/generic/float[8]", door_crew.getValue());
+	# door crewup
+	setprop("sim/multiplay/generic/float[9]", door_crewup.getValue());
+	
+	# gear meter agl
+	var gearagl_mp = gear_magl.getValue();
+	if (gearagl_mp != nil) {
+	setprop("sim/multiplay/generic/float[10]", gear_magl.getValue());
+	} else {
+	setprop("sim/multiplay/generic/float[10]", 0.0);
+	}
+	
+	
+	# collective_left for particle effect 
+	setprop("sim/multiplay/generic/float[13]", collective_left.getValue());
+	
+	# collective_right for particle effect 
+	setprop("sim/multiplay/generic/float[14]", collective_right.getValue());
+	
+	# landing lights animation
+	setprop("sim/multiplay/generic/float[15]", light_position.getValue());
+	
+	# landing lights state
+	setprop("sim/multiplay/generic/int[10]", l_light_state.getValue());
+	
+
+	
 }
 
 # main() ============================================================

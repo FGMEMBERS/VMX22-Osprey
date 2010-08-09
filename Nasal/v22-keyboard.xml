@@ -43,7 +43,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-adjust</command>
-				<property>instrumentation/doors/cargodoormix/position-norm</property>
+				<property>instrumentation/doors/cargodoor/position-norm</property>
 				<step type="double">0.02</step>
 				<min>0.0</min>
 				<max>1.0</max>
@@ -56,7 +56,7 @@
 		<repeatable>true</repeatable>
 		<binding>
 			<command>property-adjust</command>
-				<property>instrumentation/doors/cargodoormix/position-norm</property>
+				<property>instrumentation/doors/cargodoor/position-norm</property>
 				<step type="double">-0.02</step>
 				<min>0.0</min>
 				<max>1.0</max>
@@ -114,11 +114,12 @@
 		<name>L</name>
 		<desc>Landing Lights ON OFF</desc>
 		<binding>
-		   <command>nasal</command>
-		   <script>v22.doorsystem.landinglightstateexport();</script>
+			<command>property-toggle</command>
+			<property>sim/model/lights/landing-lights/state</property>
+			<value>true</value>
+			<value>false</value>
 		</binding>
 	</key>
-
 	
 	
   <key n="78">

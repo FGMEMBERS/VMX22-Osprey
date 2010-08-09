@@ -16,17 +16,21 @@
     <object-name>flash</object-name>
   </animation>
   
-  <animation>
-    <type>blend</type>
-    <object-name>flash</object-name>
-	<property>instrumentation/doors/landinglightstate/position-norm</property>
-  </animation>
+	<animation>
+        <type>select</type>
+        <object-name>flash</object-name>
+        <condition>
+            <!-- <property>sim/model/lights/landing-lights/state</property> -->
+			<property>sim/multiplay/generic/int[10]</property>
+        </condition>
+    </animation>
   
   <animation>
     <name>landinglight_ALL</name>
 	<object-name>flash</object-name>
 	<type>rotate</type>
-	<property>instrumentation/doors/landinglightpos/position-norm</property>
+	<!-- <property>instrumentation/doors/landinglightpos/position-norm</property> -->
+	<property>sim/multiplay/generic/float[15]</property>
     <factor> 0.100 </factor>
 	<interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>

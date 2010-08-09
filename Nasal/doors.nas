@@ -14,7 +14,6 @@ Doors.new = func {
 		   cockpitdoor : aircraft.door.new("instrumentation/doors/cockpitdoor", 1.0, 0),
 		   airrefule : aircraft.door.new("instrumentation/doors/airrefule", 4.0, 0),
 		   landinglightpos : aircraft.door.new("instrumentation/doors/landinglightpos", 4.0, 0),
-		   landinglightstate : aircraft.door.new("instrumentation/doors/landinglightstate", 4.0, 1),
          };
    return obj;
 };
@@ -51,9 +50,6 @@ Doors.landinglightposexport = func {
    me.landinglightpos.toggle();
 }
 
-Doors.landinglightstateexport = func {
-   me.landinglightstate.toggle();
-}
 
 
 # ==============

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- VMX-22 Version - 23.05.2010 -->
+<!-- VMX-22 Version - 01.08.2010 -->
 
 <!--
   Wing rotate axe : 
@@ -150,6 +150,7 @@
       var animation_tilt_mp = self.getNode("sim/multiplay/generic/float[1]", 1);
       var wing_rotation_mp = self.getNode("sim/multiplay/generic/float[2]", 1);
       var blade_incidence_mp = self.getNode("sim/multiplay/generic/float[3]", 1);
+	
       var blade_incidence0 = self.getNode("rotors/main/blade[0]/incidence-deg", 1);
       var blade_incidence1 = self.getNode("rotors/main/blade[1]/incidence-deg", 1);
       var blade_incidence2 = self.getNode("rotors/main/blade[2]/incidence-deg", 1);
@@ -431,7 +432,7 @@
 	<object-name>frontdoor_invitre</object-name>
   </animation>
   
-  <!-- vmx22 model prototype colors -->
+  <!-- vmx22 model prototype colors 
   <animation>
     <type>material</type>
 	<texture>fuselage.png</texture>
@@ -448,7 +449,7 @@
 	<texture>floor.png</texture>
 	<object-name>cargodoorlow_in</object-name>
   </animation>
-  
+  -->
   
   
   <animation>
@@ -545,6 +546,7 @@
       <heading-deg> 0.0 </heading-deg>
     </offsets>
   </model>
+  
 
   <!-- Position Lights -->
   <model>
@@ -591,7 +593,8 @@
     <name>landinglight_obj</name>
 	<object-name>landinglight_03</object-name>
 	<type>rotate</type>
-	<property>instrumentation/doors/landinglightpos/position-norm</property>
+	<!-- <property>instrumentation/doors/landinglightpos/position-norm</property> -->
+	<property>sim/multiplay/generic/float[15]</property>
     <factor> 0.100 </factor>
 	<interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
@@ -637,7 +640,7 @@
     </offsets>
   </model>
   
-  <!-- 3D Landing Light with effect based on shader by ZAN - Left + Right --> 
+  <!-- 3D Landing Light with effect based on shader by ZAN - Left + Right -->  
   <model>
     <path>Aircraft/VMX22-Osprey/Models/Landinglights/light-cone-left.xml</path>
     <offsets>
@@ -1364,7 +1367,8 @@
   <animation>
     <type>rotate</type>
     <object-name>HeliceGauche</object-name>
-    <property>/rotors/tail/blade[0]/position-deg</property>
+    <property>rotors/tail/blade[0]/position-deg</property>
+	<!--<property>sim/multiplay/generic/float[5]</property>-->
     <offset-deg>-90</offset-deg>
     <factor> 1 </factor>
     <center>
@@ -1505,6 +1509,7 @@
     <type>rotate</type>
     <object-name>HeliceDroite</object-name>
     <property>rotors/main/blade[0]/position-deg</property>
+	<!--<property>sim/multiplay/generic/float[4]</property>-->
     <offset-deg>-90</offset-deg>
     <factor> 1 </factor>
     <center>
@@ -2119,7 +2124,8 @@
   <animation> 
    <type>translate</type>
 		<object-name>AirRF-02</object-name>
-		<property>instrumentation/doors/airrefule/position-norm</property>
+		<!--<property>instrumentation/doors/airrefule/position-norm</property>-->
+		<property>sim/multiplay/generic/float[6]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>    0.0 </dep></entry>
       <entry><ind> 1.000 </ind><dep>  1.700 </dep></entry>
@@ -2136,7 +2142,8 @@
   <animation> 
    <type>rotate</type>
 		<object-name>cockpit_door</object-name>
-		<property>instrumentation/doors/cockpitdoor/position-norm</property>
+		<!--<property>instrumentation/doors/cockpitdoor/position-norm</property>-->
+		<property>sim/multiplay/generic/float[7]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <!--<entry><ind> 0.1 </ind><dep>   0 </dep></entry>
@@ -2181,7 +2188,8 @@
   <animation> 
    <type>rotate</type>
 		<object-name>frontLOW</object-name>
-		<property>instrumentation/doors/crew/position-norm</property>
+		<!--<property>instrumentation/doors/crew/position-norm</property>-->
+		<property>sim/multiplay/generic/float[8]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1.0 </ind><dep> 142 </dep></entry>
@@ -2200,7 +2208,8 @@
   <animation> 
    <type>translate</type>
 		<object-name>frontUP</object-name>
-		<property>instrumentation/doors/crewup/position-norm</property>
+		<!--<property>instrumentation/doors/crewup/position-norm</property>-->
+		<property>sim/multiplay/generic/float[9]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>    0.0 </dep></entry>
       <entry><ind> 0.250 </ind><dep>  0.0 </dep></entry>
@@ -2216,7 +2225,8 @@
   <animation> 
    <type>translate</type>
 		<object-name>frontUP</object-name>
-		<property>instrumentation/doors/crewup/position-norm</property>
+		<!--<property>instrumentation/doors/crewup/position-norm</property>-->
+		<property>sim/multiplay/generic/float[9]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>    0.0 </dep></entry>
       <entry><ind> 0.200 </ind><dep>  -0.040 </dep></entry>
@@ -2256,7 +2266,8 @@
    <type>rotate</type>
 		<object-name>cargoLOW</object-name>
 		<object-name>cargoLOWhydr</object-name>
-		<property>instrumentation/doors/cargodoormix/position-norm</property>
+		<!--<property>instrumentation/doors/cargodoormix/position-norm</property>-->
+		<property>sim/multiplay/generic/float[4]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       
@@ -2276,7 +2287,8 @@
   <animation> 
    <type>rotate</type>
 		<object-name>cargoLOWhydr</object-name>
-		<property>instrumentation/doors/cargodoormix/position-norm</property>
+		<!--<property>instrumentation/doors/cargodoormix/position-norm</property>-->
+		<property>sim/multiplay/generic/float[4]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       
@@ -2298,7 +2310,8 @@
   <animation> 
    <type>rotate</type>
 		<object-name>cargoUPhydr</object-name>
-		<property>instrumentation/doors/cargodoormix/position-norm</property>
+		<!--<property>instrumentation/doors/cargodoormix/position-norm</property>-->
+		<property>sim/multiplay/generic/float[4]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       
@@ -2320,7 +2333,8 @@
   <animation> 
    <type>rotate</type>
 		<object-name>cargodoorup</object-name>
-		<property>instrumentation/doors/cargodoorup/position-norm</property>
+		<!--<property>instrumentation/doors/cargodoorup/position-norm</property>-->
+		<property>sim/multiplay/generic/float[5]</property>
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>  0 </dep></entry>
       <entry><ind> 0.2 </ind><dep>  1 </dep></entry>
@@ -2344,7 +2358,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteAG</object-name>
-    <property>/gear/gear[0]/position-norm</property>
+    <property>gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.1 </ind><dep>  -98 </dep></entry>
@@ -2363,7 +2377,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteAD</object-name>
-    <property>/gear/gear[0]/position-norm</property>
+    <property>gear/gear[0]/position-norm</property>
     <interpolation>
     <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
     <entry><ind> 0.1 </ind><dep>  98 </dep></entry>
@@ -2389,7 +2403,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteG</object-name>
-    <property>/gear/gear[1]/position-norm</property>
+    <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.1 </ind><dep> -100 </dep></entry>
@@ -2410,7 +2424,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Gfront</object-name>
-    <property>/gear/gear[1]/position-norm</property>
+    <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.2 </ind><dep>  -45 </dep></entry>
@@ -2439,7 +2453,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteD</object-name>
-    <property>/gear/gear[2]/position-norm</property>
+    <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>   0 </dep></entry>
       <entry><ind> 0.1 </ind><dep> 100 </dep></entry>
@@ -2460,7 +2474,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Dfront</object-name>
-    <property>/gear/gear[2]/position-norm</property>
+    <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0.0 </ind><dep>    0 </dep></entry>
       <entry><ind> 0.2 </ind><dep>  -45 </dep></entry>
@@ -2506,7 +2520,7 @@
   <animation>
     <type>rotate</type>
     <object-name>TrainAvant</object-name>
-    <property>/gear/gear[0]/position-norm</property>
+    <property>gear/gear[0]/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> -90 </dep></entry>
       <entry><ind> 1 </ind><dep>   0 </dep></entry>
@@ -2556,7 +2570,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RGmain</object-name>
-    <property>/gear/gear[1]/position-norm</property>
+    <property>gear/gear[1]/position-norm</property>
     <interpolation>
     <entry><ind> 0 </ind><dep> -75 </dep></entry>
     <entry><ind> 1 </ind><dep>   0 </dep></entry>
@@ -2576,7 +2590,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RGmain</object-name>
-    <property>/gear/gear[1]/position-norm</property>
+    <property>gear/gear[1]/position-norm</property>
     <interpolation>
     <entry><ind> 0 </ind><dep> -70 </dep></entry>
     <entry><ind> 1 </ind><dep>   0 </dep></entry>
@@ -2626,7 +2640,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RDmain</object-name>
-    <property>/gear/gear[2]/position-norm</property>
+    <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 75 </dep></entry>
       <entry><ind> 1 </ind><dep>  0</dep></entry>
@@ -2646,7 +2660,7 @@
   <animation>
     <type>rotate</type>
     <object-name>RDmain</object-name>
-    <property>/gear/gear[2]/position-norm</property>
+    <property>gear/gear[2]/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 70 </dep></entry>
       <entry><ind> 1 </ind><dep>  0</dep></entry>
@@ -2889,9 +2903,13 @@
       <z>  0 </z>
     </axis>
   </animation>
+
   
   
-  <!-- == PARTICLE SYSTEMS == -->
+<!-- ==                  == -->
+<!-- == PARTICLE SYSTEMS == -->
+<!-- ==                  == -->
+
   
 <!-- == particles - left rotor DIRT == -->
 	<animation>
@@ -2926,7 +2944,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name>dirt_left</object-name>
-		<property>position/gear-agl-m</property>
+		<!-- <property>position/gear-agl-m</property> -->
+		<property>sim/multiplay/generic/float[10]</property>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -2947,7 +2966,7 @@
 		</axis>
 	</animation>
 	
-<!-- left rotor DIRT - move particle system up over wather -->
+<!-- left rotor DIRT - move particle system up over wather 
 	<animation>
 		<type>translate</type>
 		<object-name>dirt_left</object-name>
@@ -2967,14 +2986,9 @@
 						<property>rotors/tail/rpm</property>
 						<value>20</value>
 					</greater-than>
-					<!--<equals>
-						<property>environment/terrain</property>
-						<value>0</value>
-					</equals>-->
 		</condition>
 		
 		<property>/environment/terrain</property>
-		<!-- <factor>1.00</factor> -->
 		<interpolation>
 			<entry><ind> 0.0 </ind><dep>  1.000 </dep></entry>
 			<entry><ind> 1.0 </ind><dep>  0.000 </dep></entry>
@@ -2987,7 +3001,8 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation> 
+	</animation>
+	-->
 	
 	<!-- NORMAL GROUND left rotor DIRT - particle system controled by engines-->
 	<particlesystem>
@@ -3018,8 +3033,10 @@
 				<property>sim/crashed</property>
 			</not>
 			<less-than>
-				<property>position/altitude-agl-ft</property>
-				<value>100</value>
+				<!-- <property>position/altitude-agl-ft</property> -->
+				<property>sim/multiplay/generic/float[10]</property>
+				<!-- <value>100</value> value is canged to meter -->
+				<value>30</value>
 			</less-than>
 			<greater-than>
 				<property>rotors/tail/rpm</property>
@@ -3049,7 +3066,8 @@
 
 		<counter>
 			<particles-per-sec>
-				<property>position/altitude-agl-ft</property>
+				<!-- <property>position/altitude-agl-ft</property> -->
+				<property>sim/multiplay/generic/float[10]</property>
 				<factor>-40</factor>
 				<offset-m>2000</offset-m>
 			</particles-per-sec>
@@ -3102,7 +3120,8 @@
 					<!-- <value>0.8</value> -->
 					
 					<!-- amount of Dust / end size of particle controlled by collective -->
-					<property>sim/model/v22/rotor/left/collective</property>
+					<!-- <property>sim/model/v22/rotor/left/collective</property> -->
+					<property>sim/multiplay/generic/float[13]</property>
 					<factor>0.2</factor>
 					<min>0.8</min>
 					<max>1.5</max>
@@ -3126,7 +3145,7 @@
 	
 		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines-->
 		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines-->
-		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines-->
+		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines
 	<particlesystem>
 		<name>dirt_left_02</name>
 		<texture>dirt.rgb</texture>
@@ -3147,7 +3166,7 @@
 		</placer>
 
 		<condition>
-			<!--<property>sim/model/bo105/particles/enabled</property> -->
+			
 			<not>
 				<property>sim/paused</property>
 			</not>
@@ -3240,9 +3259,7 @@
 				</color>
 				
 				<size>
-					<!-- <value>0.8</value> -->
 					
-					<!-- amount of Dust / end size of particle controlled by collective -->
 					<property>sim/model/v22/rotor/left/collective</property>
 					<factor>0.5</factor>
 					<min>0.8</min>
@@ -3264,6 +3281,7 @@
 			<wind>true</wind>
 		</program>
 	</particlesystem>
+	-->
 	
 <!-- == particles - right rotor DIRT == -->
 
@@ -3298,7 +3316,8 @@
 	<animation>
 		<type>translate</type>
 		<object-name>dirt_right</object-name>
-		<property>position/gear-agl-m</property>
+		<!-- <property>position/gear-agl-m</property> -->
+		<property>sim/multiplay/generic/float[10]</property>
 		<axis>
 			<x>0</x>
 			<y>0</y>
@@ -3320,7 +3339,7 @@
 		</axis>
 	</animation>
 	
-<!-- right rotor DIRT - move particle system up over wather -->
+<!-- right rotor DIRT - move particle system up over wather 
 	<animation>
 		<type>translate</type>
 		<object-name>dirt_right</object-name>
@@ -3340,14 +3359,9 @@
 						<property>rotors/main/rpm</property>
 						<value>20</value>
 					</greater-than>
-					<!--<equals>
-						<property>environment/terrain</property>
-						<value>0</value>
-					</equals>-->
 		</condition>
 		
 		<property>/environment/terrain</property>
-		<!-- <factor>1.00</factor> -->
 		<interpolation>
 			<entry><ind> 0.0 </ind><dep>  1.000 </dep></entry>
 			<entry><ind> 1.0 </ind><dep>  0.000 </dep></entry>
@@ -3360,7 +3374,8 @@
 			<y>0</y>
 			<z>1</z>
 		</axis>
-	</animation> 
+	</animation>
+	-->
 	
 	<!-- NORMAL GROUND right rotor DIRT - particle system controled by engines-->
 	<particlesystem>
@@ -3391,8 +3406,10 @@
 				<property>sim/crashed</property>
 			</not>
 			<less-than>
-				<property>position/altitude-agl-ft</property>
-				<value>70</value>
+				<!-- <property>position/altitude-agl-ft</property> -->
+				<property>sim/multiplay/generic/float[10]</property>
+				<!-- <value>70</value> value is canged to meter -->
+				<value>30</value>
 			</less-than>
 			<greater-than>
 				<property>rotors/main/rpm</property>
@@ -3422,7 +3439,8 @@
 
 		<counter>
 			<particles-per-sec>
-				<property>position/altitude-agl-ft</property>
+				<!-- <property>position/altitude-agl-ft</property> -->
+				<property>sim/multiplay/generic/float[10]</property>
 				<factor>-40</factor>
 				<offset-m>2000</offset-m>
 			</particles-per-sec>
@@ -3474,7 +3492,8 @@
 					<!-- <value>0.8</value> -->
 					
 					<!-- amount of Dust / end size of particle controlled by collective -->
-					<property>sim/model/v22/rotor/right/collective</property>
+					<!-- <property>sim/model/v22/rotor/right/collective</property> -->
+					<property>sim/multiplay/generic/float[14]</property>
 					<!-- <interpolation>
 						<entry><ind> -1 </ind><dep> 0 </dep></entry>
 						<entry><ind> 0 </ind><dep> 0 </dep></entry>
@@ -3503,7 +3522,7 @@
 	
 		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines-->
 		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines-->
-		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines-->
+		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines
 	<particlesystem>
 		<name>dirt_right_02</name>
 		<texture>dirt.rgb</texture>
@@ -3524,7 +3543,7 @@
 		</placer>
 
 		<condition>
-			<!--<property>sim/model/bo105/particles/enabled</property> -->
+			
 			<not>
 				<property>sim/paused</property>
 			</not>
@@ -3617,9 +3636,7 @@
 				</color>
 				
 				<size>
-					<!-- <value>0.8</value> -->
 					
-					<!-- amount of Dust / end size of particle controlled by collective -->
 					<property>sim/model/v22/rotor/right/collective</property>
 					<factor>0.5</factor>
 					<min>0.8</min>
@@ -3641,6 +3658,7 @@
 			<wind>true</wind>
 		</program>
 	</particlesystem>
+	-->
 	
 
   

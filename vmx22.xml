@@ -102,50 +102,32 @@
 	
 	
 	<!-- main fuselage front-->
-	<fuselage ax="8.1" ay="0" az="-1.9" bx="5.8" by="0" bz="-1.4" width="2.2" taper="0.25" midpoint="1.0" cx="0.15" cy="2" cz="0.35" idrag="0"/>
+	<fuselage ax="8.1" ay="0" az="-1.9" bx="5.8" by="0" bz="-1.4" width="2.2" taper="0.25" midpoint="1.0" cx="0.15" cy="0.15" cz="0.35" idrag="0"/>
 	<!-- main fuselage center -->
-	<fuselage ax="6.0" ay="0" az="-1.4" bx="-2.5" by="0" bz="-1.4" width="2.3" taper="0.95" midpoint="0.5" cx="0.35" cy="2" cz="0.35" idrag="0"/>
+	<fuselage ax="6.0" ay="0" az="-1.4" bx="-2.5" by="0" bz="-1.4" width="2.3" taper="0.95" midpoint="0.5" cx="0.35" cy="1.6" cz="0.35" idrag="0"/>
 	
 	<!-- top fuselage -->
-	<fuselage ax="1.0" ay="0" az="-0.8" bx="-2.5" by="0" bz="-0.8" width="2.3" taper="0.40" midpoint="0.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="3.0" ay="0" az="-0.8" bx="1.00" by="0" bz="-0.8" width="2.3" taper="1.00" midpoint="0.5" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="4.0" ay="0" az="-0.8" bx="3.00" by="0" bz="-0.8" width="2.3" taper="0.40" midpoint="1.0" cx="0.15" cy="2" cz="0.35" idrag="0"/>
-	
-	<!-- top fuselage right wingbase
-	<fuselage ax="3.2" ay="-0.2" az="-0.0" bx="2.20" by="-0.7" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="-0.7" az="-0.0" bx="0.00" by="-0.7" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="-0.7" az="-0.0" bx="-1.20" by="-0.2" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	
-	<fuselage ax="3.2" ay="-0.5" az="-0.0" bx="2.20" by="-1.0" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="-1.0" az="-0.0" bx="0.00" by="-1.0" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="-1.0" az="-0.0" bx="-1.20" by="-0.4" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx=".7" cy="2" cz="0.35" idrag="0"/>-->
+	<fuselage ax="1.0" ay="0" az="-0.8" bx="-2.5" by="0" bz="-0.8" width="2.3" taper="0.40" midpoint="0.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="3.0" ay="0" az="-0.8" bx="1.00" by="0" bz="-0.8" width="2.3" taper="1.00" midpoint="0.5" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="4.0" ay="0" az="-0.8" bx="3.00" by="0" bz="-0.8" width="2.3" taper="0.40" midpoint="1.0" cx="0.15" cy="0.15" cz="0.35" idrag="0"/>
 	
 	<!-- top fuselage right wingbase-->
-	<fuselage ax="3.2" ay="-0.2" az="-0.0" bx="2.20" by="-0.7" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="-0.7" az="-0.0" bx="0.00" by="-0.7" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="-0.7" az="-0.0" bx="-1.20" by="-0.2" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
+	<fuselage ax="3.2" ay="-0.2" az="-0.0" bx="2.20" by="-0.7" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="2.2" ay="-0.7" az="-0.0" bx="0.00" by="-0.7" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="0.0" ay="-0.7" az="-0.0" bx="-1.20" by="-0.2" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
 	
-	<fuselage ax="3.2" ay="-0.5" az="-0.0" bx="2.20" by="-1.0" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="-1.0" az="-0.0" bx="0.00" by="-1.0" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="-1.0" az="-0.0" bx="-1.20" by="-0.4" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	
-	<!-- top fuselage left wingbase
-	<fuselage ax="3.2" ay="0.2" az="-0.0" bx="2.20" by="0.7" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="0.7" az="-0.0" bx="0.00" by="0.7" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="0.7" az="-0.0" bx="-1.20" by="0.2" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	
-	<fuselage ax="3.2" ay="0.5" az="-0.0" bx="2.20" by="1.0" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="1.0" az="-0.0" bx="0.00" by="1.0" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx=".7" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="1.0" az="-0.0" bx="-1.20" by="0.4" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx=".7" cy="2" cz="0.35" idrag="0"/>-->
+	<fuselage ax="3.2" ay="-0.5" az="-0.0" bx="2.20" by="-1.0" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="2.2" ay="-1.0" az="-0.0" bx="0.00" by="-1.0" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="0.0" ay="-1.0" az="-0.0" bx="-1.20" by="-0.4" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
 	
 	<!-- top fuselage left wingbase-->
-	<fuselage ax="3.2" ay="0.2" az="-0.0" bx="2.20" by="0.7" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="0.7" az="-0.0" bx="0.00" by="0.7" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="0.7" az="-0.0" bx="-1.20" by="0.2" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
+	<fuselage ax="3.2" ay="0.2" az="-0.0" bx="2.20" by="0.7" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="2.2" ay="0.7" az="-0.0" bx="0.00" by="0.7" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="0.0" ay="0.7" az="-0.0" bx="-1.20" by="0.2" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
 	
-	<fuselage ax="3.2" ay="0.5" az="-0.0" bx="2.20" by="1.0" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="2.2" ay="1.0" az="-0.0" bx="0.00" by="1.0" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="2" cz="0.35" idrag="0"/>
-	<fuselage ax="0.0" ay="1.0" az="-0.0" bx="-1.20" by="0.4" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="2" cz="0.35" idrag="0"/>
+	<fuselage ax="3.2" ay="0.5" az="-0.0" bx="2.20" by="1.0" bz="0.0" width="0.5" taper="0.40" midpoint="1.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="2.2" ay="1.0" az="-0.0" bx="0.00" by="1.0" bz="0.0" width="0.5" taper="1.00" midpoint="0.5" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
+	<fuselage ax="0.0" ay="1.0" az="-0.0" bx="-1.20" by="0.4" bz="-0.2" width="0.5" taper="0.40" midpoint="0.0" cx="0.015" cy="0.15" cz="0.35" idrag="0"/>
 	
 	<!-- side fuselage right-->
 	<fuselage ax="3.0" ay="-0.75" az="-2.1" bx="1.0" by="-1.75" bz="-2.1" width="0.8" taper="1.0" midpoint="0.5" cx="0.015" cy="1" cz="0.35" idrag="0"/>
