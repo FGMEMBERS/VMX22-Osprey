@@ -13,7 +13,7 @@
     <description>Bell Boeing VMX22 Osprey (Yasim)</description>
     <author>BARANGER Emmanuel (3D), Maik Justus (FDM), Oliver Thurau (3D upgrade and FDM / XML upgrade)</author>
     <status>alpha</status>
-    <aircraft-version>0.55-01.08.2010</aircraft-version>
+    <aircraft-version>0.59-28.08.2010</aircraft-version>
     <flight-model>yasim</flight-model>
     <aero>vmx22</aero>
     <fuel-fraction>0.8</fuel-fraction>
@@ -126,6 +126,8 @@
 		<float n="9"></float>
 		<!-- gear agl meter mp - rotor particles animation -->
 		<float n="10"></float>
+		<!-- Front gear caster mp - gear[0]/caster-angle-deg rotation animation -->
+		<float n="11"></float>
 		
 		<!-- collective left mp - rotor particles animation -->
 		<float n="13"></float>
@@ -134,8 +136,24 @@
 		<!-- landing lights animation mp - landing lights model position -->
 		<float n="15"></float>
 		
+		<!-- pushback animation mp - position -->
+		<float n="16"></float>
+		
+		<!-- Front gear A spin mp - gear[0]/rollspeed-ms -->
+		<float n="17"></float>	
+		<!-- Left gear G spin mp - gear[1]/rollspeed-ms -->
+		<float n="18"></float>	
+		<!-- Right gear D spin mp - gear[2]/rollspeed-ms -->
+		<float n="19"></float>
+		
 		<!-- landing lights state mp -->
 		<int n="10"></int>
+		
+		<!-- pushback state mp -->
+		<int n="11"></int>
+		
+		<!-- paratrooper jump state mp -->
+		<int n="12"></int>
 		
       </generic>
     </multiplay>
@@ -267,14 +285,45 @@
       <setting>0.66</setting> <!--  -->
       <setting>1.00</setting> <!-- Full -->
     </flaps>
-
-    <menubar include="Dialogs/v22-menu.xml"/>
+	
+	<hitches>
+	<!-- make sure some properties do exist, when the list for multiplayer transfer is defined-->
+	<!-- they need to be in the same value, as they are initilized in the FDM, to get the same values after reset should fix this somehow-->
+	<aerotow>
+		<tow>
+			<length type="float">30</length>
+			<elastic-constant type="float">10000</elastic-constant>
+			<weight-per-m-kg-m type="float">0.035</weight-per-m-kg-m>
+			<dist type="float">1</dist>
+			<connected-to-property-node type="bool"></connected-to-property-node>
+			<brake-force type="float">100000</brake-force>
+			<connected-to-ai-or-mp-callsign type ="string">*</connected-to-ai-or-mp-callsign>
+			<end-force-x type ="float">0</end-force-x>
+			<end-force-y type ="float">0</end-force-y>
+			<end-force-z type ="float">0</end-force-z>
+		</tow>
+		<speed-in-tow-direction type="float">0</speed-in-tow-direction>
+		<open type="bool">true</open>
+			<local-pos-x type="float">0</local-pos-x>
+			<local-pos-y type="float">0</local-pos-y>
+			<local-pos-z type="float">0</local-pos-z>
+		<is-slave type="bool">false</is-slave>
+	</aerotow>
+	</hitches>
+	
+	<menubar include="Dialogs/v22-menu.xml"/>
 
   </sim>
 
   <input>
     <keyboard include="Nasal/v22-keyboard.xml"/>
   </input>
+  
+  <controls>
+	<aerotow>
+		<find-aircraft type="bool">false</find-aircraft>
+	</aerotow> 
+  </controls>
 
   <rotors>
     <main>

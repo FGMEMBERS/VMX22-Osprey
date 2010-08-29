@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- VMX-22 Version - 01.08.2010 -->
+<!-- VMX-22 Version - 28.08.2010 -->
 
 <!--
   Wing rotate axe : 
@@ -277,8 +277,8 @@
 	
 	<!-- passenger and cargo doors -->
 	<object-name>frontdoorup</object-name>
-	<object-name>frontdoor_up01</object-name>
-	<object-name>frontdoor_up02</object-name>
+	<!--<object-name>frontdoor_up01</object-name>-->
+	<!--<object-name>frontdoor_up02</object-name>-->
 	<object-name>frontdoorlow</object-name>
 	<object-name>frontdoor_hand1</object-name>
 	<object-name>frontdoor_hand2</object-name>
@@ -792,6 +792,19 @@
       <z-m> -1.870 </z-m>
     </offsets>
   </model>
+  
+  <!-- Pushback - changed generic military truck for first tests -->
+  <model>
+		<name>Pushback</name>
+		<path>Aircraft/VMX22-Osprey/Models/Pushback/Military.xml</path>
+		<offsets>
+			<x-m>-7.15</x-m>
+			<y-m>0</y-m>
+			<z-m>-3.2</z-m>
+		</offsets>
+	</model>
+	
+
   
   
   
@@ -2179,8 +2192,8 @@
   <animation>
     <name>frontUP</name>
 	<object-name>frontdoorup</object-name>
-	<object-name>frontdoor_up01</object-name>
-	<object-name>frontdoor_up02</object-name>
+	<!--<object-name>frontdoor_up01</object-name>-->
+	<!--<object-name>frontdoor_up02</object-name>-->
 	<object-name>frontdoor_vitre</object-name>
 	<object-name>frontdoor_invitre</object-name>
   </animation>
@@ -2204,7 +2217,7 @@
     </axis>
   </animation>
   
-  <!-- Crew Door upper parts move inward and back -->
+  <!-- Crew Door upper parts move up -->
   <animation> 
    <type>translate</type>
 		<object-name>frontUP</object-name>
@@ -2213,15 +2226,16 @@
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>    0.0 </dep></entry>
       <entry><ind> 0.250 </ind><dep>  0.0 </dep></entry>
-	  <entry><ind> 1.000 </ind><dep>  0.900 </dep></entry>
+	  <entry><ind> 1.000 </ind><dep>  1.200 </dep></entry>
     </interpolation>
 		<axis>
-            <x>1.000</x>
+            <x>0.000</x>
             <y>0.000</y>
-            <z>0.000</z>
+            <z>1.000</z>
         </axis>
   </animation>
   
+  <!-- Crew Door upper parts move inward -->
   <animation> 
    <type>translate</type>
 		<object-name>frontUP</object-name>
@@ -2230,13 +2244,34 @@
 		<interpolation>
       <entry><ind> 0.0 </ind><dep>    0.0 </dep></entry>
       <entry><ind> 0.200 </ind><dep>  -0.040 </dep></entry>
-      <entry><ind> 1.000 </ind><dep>  -0.040 </dep></entry>
+      <entry><ind> 1.000 </ind><dep>  -0.340 </dep></entry>
     </interpolation>
 		<axis>
             <x>0.000</x>
             <y>1.000</y>
             <z>0.000</z>
         </axis>
+  </animation>
+  
+  <!-- Crew Door upper parts rotate while move up -->
+  <animation> 
+   <type>rotate</type>
+		<object-name>frontUP</object-name>
+		<!--<property>instrumentation/doors/crewup/position-norm</property>-->
+		<property>sim/multiplay/generic/float[9]</property>
+		<interpolation>
+      <entry><ind> 0.000 </ind><dep>   0 </dep></entry>
+	  <entry><ind> 0.250 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -75 </dep></entry>
+    </interpolation>
+    <axis>
+      <x1-m> -4.043 </x1-m>
+      <y1-m>  1.161 </y1-m>
+      <z1-m> -1.607 </z1-m>
+      <x2-m> -4.855 </x2-m>
+      <y2-m>  1.161 </y2-m>
+      <z2-m> -1.607 </z2-m>
+    </axis>
   </animation>
   
   <!-- Cargo Door lower parts-->
@@ -2834,7 +2869,8 @@
   <animation>
     <type>rotate</type>
     <object-name>TrainAvant</object-name>
-	<property>gear/gear[0]/caster-angle-deg</property>
+	<!-- <property>gear/gear[0]/caster-angle-deg</property> -->
+	<property>sim/multiplay/generic/float[11]</property>
 	<factor> 1 </factor>
     <!--<property>/controls/flight/rudder</property>
     <factor> 20.0 </factor>
@@ -2856,7 +2892,8 @@
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>
-    <property>/gear/gear[0]/rollspeed-ms</property>
+    <!-- <property>/gear/gear[0]/rollspeed-ms</property> -->
+	<property>sim/multiplay/generic/float[17]</property>
     <factor> 30 </factor>
     <center>
       <x-m> -7.105 </x-m>
@@ -2873,7 +2910,8 @@
   <animation>
     <type>spin</type>
     <object-name>roueG</object-name>
-    <property>/gear/gear[1]/rollspeed-ms</property>
+    <!-- <property>/gear/gear[1]/rollspeed-ms</property> -->
+	<property>sim/multiplay/generic/float[18]</property>
     <factor> 30 </factor>
     <center>
       <x-m>  1.118 </x-m>
@@ -2890,7 +2928,8 @@
   <animation>
     <type>spin</type>
     <object-name>roueD</object-name>
-    <property>/gear/gear[2]/rollspeed-ms</property>
+    <!-- <property>/gear/gear[2]/rollspeed-ms</property> -->
+	<property>sim/multiplay/generic/float[19]</property>
     <factor> 30 </factor>
     <center>
       <x-m>  1.118 </x-m>
@@ -2910,756 +2949,18 @@
 <!-- == PARTICLE SYSTEMS == -->
 <!-- ==                  == -->
 
-  
-<!-- == particles - left rotor DIRT == -->
-	<animation>
-		<name>dirt_left</name>
-			<object-name>dirt_left_01</object-name>
-			<object-name>dirt_left_02</object-name>
-	</animation>
-	
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>dirt_left</object-name>
-		<property>orientation/pitch-deg</property>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
 
-	<animation>
-		<type>rotate</type>
-		<object-name>dirt_left</object-name>
-		<property>orientation/roll-deg</property>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>dirt_left</object-name>
-		<!-- <property>position/gear-agl-m</property> -->
-		<property>sim/multiplay/generic/float[10]</property>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation>
-	
-<!-- left rotor DIRT - move particle system with engine tilt -->
-	<animation>
-		<type>translate</type>
-		<object-name>dirt_left</object-name>
-		<property>sim/model/v22/animation_tilt</property>
-		<factor>0.05</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	
-<!-- left rotor DIRT - move particle system up over wather 
-	<animation>
-		<type>translate</type>
-		<object-name>dirt_left</object-name>
-		
-		<condition>
-					<not>
-						<property>sim/paused</property>
-					</not>
-					<not>
-						<property>sim/crashed</property>
-					</not>
-					<less-than>
-						<property>position/altitude-agl-ft</property>
-						<value>70</value>
-					</less-than>
-					<greater-than>
-						<property>rotors/tail/rpm</property>
-						<value>20</value>
-					</greater-than>
-		</condition>
-		
-		<property>/environment/terrain</property>
-		<interpolation>
-			<entry><ind> 0.0 </ind><dep>  1.000 </dep></entry>
-			<entry><ind> 1.0 </ind><dep>  0.000 </dep></entry>
-			<entry><ind> 3.0 </ind><dep>  0.000 </dep></entry>
-			<entry><ind> 4.0 </ind><dep>  0.000 </dep></entry>
-		</interpolation>
-		
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
-	</animation>
-	-->
-	
-	<!-- NORMAL GROUND left rotor DIRT - particle system controled by engines-->
-	<particlesystem>
-		<name>dirt_left_01</name>
-		<texture>dirt.rgb</texture>
-		<emissive>false</emissive>
-		<lighting>false</lighting>
-
-		<offsets>
-			<x-m>-1.5</x-m>
-			<y-m>-6.8</y-m>
-			<z-m>-2.9</z-m>
-			<roll-deg>90</roll-deg>
-		</offsets>
-
-		<attach>world</attach>
-
-		<placer>
-			<type>point</type>
-		</placer>
-
-		<condition>
-			<!--<property>sim/model/bo105/particles/enabled</property> -->
-			<not>
-				<property>sim/paused</property>
-			</not>
-			<not>
-				<property>sim/crashed</property>
-			</not>
-			<less-than>
-				<!-- <property>position/altitude-agl-ft</property> -->
-				<property>sim/multiplay/generic/float[10]</property>
-				<!-- <value>100</value> value is canged to meter -->
-				<value>30</value>
-			</less-than>
-			<greater-than>
-				<property>rotors/tail/rpm</property>
-				<value>20</value>
-			</greater-than>
-		</condition>
-
-		<shooter>
-			<theta-min-deg>0</theta-min-deg>
-			<theta-max-deg>360</theta-max-deg>
-			<phi-min-deg>-0.1</phi-min-deg>
-			<phi-max-deg>0.1</phi-max-deg>
-			<speed-mps>
-				<property>rotors/tail/rpm</property>
-				<factor>0.1</factor>
-				<spread>2</spread>
-			</speed-mps>
-			<rotation-speed>
-				<x-min-deg-sec>0</x-min-deg-sec>
-				<y-min-deg-sec>0</y-min-deg-sec>
-				<z-min-deg-sec>0</z-min-deg-sec>
-				<x-max-deg-sec>0</x-max-deg-sec>
-				<y-max-deg-sec>0</y-max-deg-sec>
-				<z-max-deg-sec>0</z-max-deg-sec>
-			</rotation-speed>
-		</shooter>
-
-		<counter>
-			<particles-per-sec>
-				<!-- <property>position/altitude-agl-ft</property> -->
-				<property>sim/multiplay/generic/float[10]</property>
-				<factor>-40</factor>
-				<offset-m>2000</offset-m>
-			</particles-per-sec>
-		</counter>
-
-		<align>billboard</align>
-
-		<particle>
-			<start>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/tail/rpm</property>
-						<factor>0.00004</factor>
-						<max>0.02</max>
-					</alpha>
-				</color>
-				<size>
-					<value>0.8</value>
-				</size>
-			</start>
-
-			<end>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/tail/rpm</property>
-						<factor>0.0002</factor>
-						<max>0.04</max>
-					</alpha>
-				</color>
-				
-				<size>
-					<!-- <value>0.8</value> -->
-					
-					<!-- amount of Dust / end size of particle controlled by collective -->
-					<!-- <property>sim/model/v22/rotor/left/collective</property> -->
-					<property>sim/multiplay/generic/float[13]</property>
-					<factor>0.2</factor>
-					<min>0.8</min>
-					<max>1.5</max>
-
-				</size>
-			</end>
-
-			<life-sec>
-				<value>0.27</value>
-			</life-sec>
-			<mass-kg>0.01</mass-kg>
-			<radius-m>0.01</radius-m>
-		</particle>
-
-		<program>
-			<fluid>water</fluid>
-			<gravity>true</gravity>
-			<wind>true</wind>
-		</program>
-	</particlesystem>
-	
-		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines-->
-		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines-->
-		<!-- OVER WATHER ONLY - left rotor DIRT - particle system controled by engines
-	<particlesystem>
-		<name>dirt_left_02</name>
-		<texture>dirt.rgb</texture>
-		<emissive>false</emissive>
-		<lighting>false</lighting>
-
-		<offsets>
-			<x-m>-1.5</x-m>
-			<y-m>-6.8</y-m>
-			<z-m>-2.1</z-m>
-			<roll-deg>90</roll-deg>
-		</offsets>
-
-		<attach>world</attach>
-
-		<placer>
-			<type>point</type>
-		</placer>
-
-		<condition>
-			
-			<not>
-				<property>sim/paused</property>
-			</not>
-			<not>
-				<property>sim/crashed</property>
-			</not>
-			<less-than>
-				<property>position/altitude-agl-ft</property>
-				<value>100</value>
-			</less-than>
-			<greater-than>
-				<property>rotors/tail/rpm</property>
-				<value>20</value>
-			</greater-than>
-				<equals>
-				<property>environment/terrain</property>
-				<value>0</value>
-				</equals>
-		</condition>
-
-		<shooter>
-			<theta-min-deg>0</theta-min-deg>
-			<theta-max-deg>360</theta-max-deg>
-			<phi-min-deg>-0.1</phi-min-deg>
-			<phi-max-deg>0.1</phi-max-deg>
-			<speed-mps>
-				<property>rotors/tail/rpm</property>
-				<factor>0.1</factor>
-				<spread>2</spread>
-			</speed-mps>
-			<rotation-speed>
-				<x-min-deg-sec>0</x-min-deg-sec>
-				<y-min-deg-sec>0</y-min-deg-sec>
-				<z-min-deg-sec>0</z-min-deg-sec>
-				<x-max-deg-sec>0</x-max-deg-sec>
-				<y-max-deg-sec>0</y-max-deg-sec>
-				<z-max-deg-sec>0</z-max-deg-sec>
-			</rotation-speed>
-		</shooter>
-
-		<counter>
-			<particles-per-sec>
-				<property>position/altitude-agl-ft</property>
-				<factor>-40</factor>
-				<offset-m>2000</offset-m>
-			</particles-per-sec>
-		</counter>
-
-		<align>billboard</align>
-
-		<particle>
-			<start>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/tail/rpm</property>
-						<factor>0.00004</factor>
-						<max>0.02</max>
-					</alpha>
-				</color>
-				<size>
-					<value>0.8</value>
-				</size>
-			</start>
-
-			<end>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/tail/rpm</property>
-						<factor>0.0002</factor>
-						<max>0.04</max>
-					</alpha>
-				</color>
-				
-				<size>
-					
-					<property>sim/model/v22/rotor/left/collective</property>
-					<factor>0.5</factor>
-					<min>0.8</min>
-					<max>10.5</max>
-
-				</size>
-			</end>
-
-			<life-sec>
-				<value>0.50</value>
-			</life-sec>
-			<mass-kg>0.01</mass-kg>
-			<radius-m>0.01</radius-m>
-		</particle>
-
-		<program>
-			<fluid>water</fluid>
-			<gravity>true</gravity>
-			<wind>true</wind>
-		</program>
-	</particlesystem>
-	-->
-	
-<!-- == particles - right rotor DIRT == -->
-
-	<animation>
-		<name>dirt_right</name>
-			<object-name>dirt_right_01</object-name>
-			<object-name>dirt_right_02</object-name>
-	</animation>
-	
-	<animation>
-		<type>rotate</type>
-		<object-name>dirt_right</object-name>
-		<property>orientation/pitch-deg</property>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>dirt_right</object-name>
-		<property>orientation/roll-deg</property>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>translate</type>
-		<object-name>dirt_right</object-name>
-		<!-- <property>position/gear-agl-m</property> -->
-		<property>sim/multiplay/generic/float[10]</property>
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>-1</z>
-		</axis>
-	</animation>
-
-<!-- right rotor DIRT - move particle system with engine tilt -->
-	
-	<animation>
-		<type>translate</type>
-		<object-name>dirt_right</object-name>
-		<property>sim/model/v22/animation_tilt</property>
-		<factor>0.05</factor>
-		<axis>
-			<x>1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	
-<!-- right rotor DIRT - move particle system up over wather 
-	<animation>
-		<type>translate</type>
-		<object-name>dirt_right</object-name>
-		
-		<condition>
-					<not>
-						<property>sim/paused</property>
-					</not>
-					<not>
-						<property>sim/crashed</property>
-					</not>
-					<less-than>
-						<property>position/altitude-agl-ft</property>
-						<value>70</value>
-					</less-than>
-					<greater-than>
-						<property>rotors/main/rpm</property>
-						<value>20</value>
-					</greater-than>
-		</condition>
-		
-		<property>/environment/terrain</property>
-		<interpolation>
-			<entry><ind> 0.0 </ind><dep>  1.000 </dep></entry>
-			<entry><ind> 1.0 </ind><dep>  0.000 </dep></entry>
-			<entry><ind> 3.0 </ind><dep>  0.000 </dep></entry>
-			<entry><ind> 4.0 </ind><dep>  0.000 </dep></entry>
-		</interpolation>
-		
-		<axis>
-			<x>0</x>
-			<y>0</y>
-			<z>1</z>
-		</axis>
-	</animation>
-	-->
-	
-	<!-- NORMAL GROUND right rotor DIRT - particle system controled by engines-->
-	<particlesystem>
-		<name>dirt_right_01</name>
-		<texture>dirt.rgb</texture>
-		<emissive>false</emissive>
-		<lighting>false</lighting>
-		
-		<offsets>
-			<x-m>-1.5</x-m>
-			<y-m>6.8</y-m>
-			<z-m>-2.9</z-m>
-			<roll-deg>90</roll-deg>
-		</offsets>
-
-		<attach>world</attach>
-
-		<placer>
-			<type>point</type>
-		</placer>
-
-		<condition>
-			
-			<not>
-				<property>sim/paused</property>
-			</not>
-			<not>
-				<property>sim/crashed</property>
-			</not>
-			<less-than>
-				<!-- <property>position/altitude-agl-ft</property> -->
-				<property>sim/multiplay/generic/float[10]</property>
-				<!-- <value>70</value> value is canged to meter -->
-				<value>30</value>
-			</less-than>
-			<greater-than>
-				<property>rotors/main/rpm</property>
-				<value>20</value>
-			</greater-than>
-		</condition>
-
-		<shooter>
-			<theta-min-deg>0</theta-min-deg>
-			<theta-max-deg>360</theta-max-deg>
-			<phi-min-deg>-0.1</phi-min-deg>
-			<phi-max-deg>0.1</phi-max-deg>
-			<speed-mps>
-				<property>rotors/main/rpm</property>
-				<factor>0.1</factor>
-				<spread>2</spread>
-			</speed-mps>
-			<rotation-speed>
-				<x-min-deg-sec>0</x-min-deg-sec>
-				<y-min-deg-sec>0</y-min-deg-sec>
-				<z-min-deg-sec>0</z-min-deg-sec>
-				<x-max-deg-sec>0</x-max-deg-sec>
-				<y-max-deg-sec>0</y-max-deg-sec>
-				<z-max-deg-sec>0</z-max-deg-sec>
-			</rotation-speed>
-		</shooter>
-
-		<counter>
-			<particles-per-sec>
-				<!-- <property>position/altitude-agl-ft</property> -->
-				<property>sim/multiplay/generic/float[10]</property>
-				<factor>-40</factor>
-				<offset-m>2000</offset-m>
-			</particles-per-sec>
-		</counter>
-
-		<align>billboard</align>
-
-		<particle>
-			<start>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/main/rpm</property>
-						<factor>0.00004</factor>
-						<max>0.02</max>
-					</alpha>
-				</color>
-				<size>
-					<value>0.8</value>
-				</size>
-			</start>
-
-			<end>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/main/rpm</property>
-						<factor>0.0002</factor>
-						<max>0.04</max>
-					</alpha>
-				</color>
-				<size>
-					<!-- <value>0.8</value> -->
-					
-					<!-- amount of Dust / end size of particle controlled by collective -->
-					<!-- <property>sim/model/v22/rotor/right/collective</property> -->
-					<property>sim/multiplay/generic/float[14]</property>
-					<!-- <interpolation>
-						<entry><ind> -1 </ind><dep> 0 </dep></entry>
-						<entry><ind> 0 </ind><dep> 0 </dep></entry>
-						<entry><ind> 1 </ind><dep> 2.50 </dep></entry>
-					</interpolation> -->
-					<factor>0.2</factor>
-					<min>0.1</min>
-					<max>1.5</max>
-				</size>
-			</end>
-
-			<life-sec>
-				<value>0.27</value>
-			</life-sec>
-			<mass-kg>0.01</mass-kg>
-			<radius-m>0.01</radius-m>
-		</particle>
-
-		<program>
-			<fluid>water</fluid>
-			<gravity>true</gravity>
-			<wind>true</wind>
-		</program>
-	</particlesystem>
-	
-	
-		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines-->
-		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines-->
-		<!-- OVER WATHER ONLY - right rotor DIRT - particle system controled by engines
-	<particlesystem>
-		<name>dirt_right_02</name>
-		<texture>dirt.rgb</texture>
-		<emissive>false</emissive>
-		<lighting>false</lighting>
-
-		<offsets>
-			<x-m>-1.5</x-m>
-			<y-m> 6.8</y-m>
-			<z-m>-2.1</z-m>
-			<roll-deg>90</roll-deg>
-		</offsets>
-
-		<attach>world</attach>
-
-		<placer>
-			<type>point</type>
-		</placer>
-
-		<condition>
-			
-			<not>
-				<property>sim/paused</property>
-			</not>
-			<not>
-				<property>sim/crashed</property>
-			</not>
-			<less-than>
-				<property>position/altitude-agl-ft</property>
-				<value>100</value>
-			</less-than>
-			<greater-than>
-				<property>rotors/main/rpm</property>
-				<value>20</value>
-			</greater-than>
-				<equals>
-				<property>environment/terrain</property>
-				<value>0</value>
-				</equals>
-		</condition>
-
-		<shooter>
-			<theta-min-deg>0</theta-min-deg>
-			<theta-max-deg>360</theta-max-deg>
-			<phi-min-deg>-0.1</phi-min-deg>
-			<phi-max-deg>0.1</phi-max-deg>
-			<speed-mps>
-				<property>rotors/main/rpm</property>
-				<factor>0.1</factor>
-				<spread>2</spread>
-			</speed-mps>
-			<rotation-speed>
-				<x-min-deg-sec>0</x-min-deg-sec>
-				<y-min-deg-sec>0</y-min-deg-sec>
-				<z-min-deg-sec>0</z-min-deg-sec>
-				<x-max-deg-sec>0</x-max-deg-sec>
-				<y-max-deg-sec>0</y-max-deg-sec>
-				<z-max-deg-sec>0</z-max-deg-sec>
-			</rotation-speed>
-		</shooter>
-
-		<counter>
-			<particles-per-sec>
-				<property>position/altitude-agl-ft</property>
-				<factor>-40</factor>
-				<offset-m>2000</offset-m>
-			</particles-per-sec>
-		</counter>
-
-		<align>billboard</align>
-
-		<particle>
-			<start>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/main/rpm</property>
-						<factor>0.00004</factor>
-						<max>0.02</max>
-					</alpha>
-				</color>
-				<size>
-					<value>0.8</value>
-				</size>
-			</start>
-
-			<end>
-				<color>
-					<red>
-						<value>0.6</value>
-					</red>
-					<green>
-						<value>0.6</value>
-					</green>
-					<blue>
-						<value>0.6</value>
-					</blue>
-					<alpha>
-						<property>rotors/main/rpm</property>
-						<factor>0.0002</factor>
-						<max>0.04</max>
-					</alpha>
-				</color>
-				
-				<size>
-					
-					<property>sim/model/v22/rotor/right/collective</property>
-					<factor>0.5</factor>
-					<min>0.8</min>
-					<max>10.5</max>
-
-				</size>
-			</end>
-
-			<life-sec>
-				<value>0.50</value>
-			</life-sec>
-			<mass-kg>0.01</mass-kg>
-			<radius-m>0.01</radius-m>
-		</particle>
-
-		<program>
-			<fluid>water</fluid>
-			<gravity>true</gravity>
-			<wind>true</wind>
-		</program>
-	</particlesystem>
-	-->
-	
+<!-- Rotor dirt without water effect -->
+  <model>
+    <name>mainrotors_dirt</name>
+    <path>Aircraft/VMX22-Osprey/Models/rotor-particle/rotor-particle_new.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </offsets>
+  </model>
+  	
 
   
 </PropertyList>

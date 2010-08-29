@@ -346,6 +346,17 @@ var door_crewup = props.globals.getNode("instrumentation/doors/crewup/position-n
 # MP gear-agl-meter for rotor particle ====================================
 var gear_magl = props.globals.getNode("position/gear-agl-m", 1);
 
+# MP gear-caster for gear rotation ====================================
+var gear_cast = props.globals.getNode("gear/gear[0]/caster-angle-deg", 1);
+
+# MP Front gear-spin ====================================
+var gear0_spin = props.globals.getNode("gear/gear[0]/rollspeed-ms", 1);
+# MP Left gear-spin ====================================
+var gear1_spin = props.globals.getNode("gear/gear[1]/rollspeed-ms", 1);
+# MP Right gear-spin ====================================
+var gear2_spin = props.globals.getNode("gear/gear[2]/rollspeed-ms", 1);
+
+
 # MP sim/model/v22/rotor/left/collective for rotor particle
 var collective_left = props.globals.getNode("sim/model/v22/rotor/left/collective", 1);
 
@@ -357,6 +368,15 @@ var light_position = props.globals.getNode("instrumentation/doors/landinglightpo
 
 # landing lights state ====================================
 var l_light_state = props.globals.getNode("sim/model/lights/landing-lights/state", 1);
+
+# pushback state ====================================
+var pback_state = props.globals.getNode("sim/model/pushback/enabled", 1);
+
+# paratrooper jump state ====================================
+#var ptroup_jump_state = props.globals.getNode("controls/jump-signal", 1);
+
+# pushback positon ====================================
+var pback_pos = props.globals.getNode("sim/model/pushback/position-norm", 1);
 
 
 
@@ -914,6 +934,22 @@ var update_mp_generics = func {
 	setprop("sim/multiplay/generic/float[10]", 0.0);
 	}
 	
+	# gear caster-angle-deg for mp front gear caster rotation
+	
+	var gearcast_mp = gear_cast.getValue();
+	if (gearcast_mp != nil) {
+	setprop("sim/multiplay/generic/float[11]", gear_cast.getValue());
+	} else {
+	setprop("sim/multiplay/generic/float[11]", 0.0);
+	}
+	
+	# Front gear spin A for mp
+	setprop("sim/multiplay/generic/float[17]", gear0_spin.getValue());
+	# Left gear spin G for mp
+	setprop("sim/multiplay/generic/float[18]", gear1_spin.getValue());
+	# Right gear spin D for mp
+	setprop("sim/multiplay/generic/float[19]", gear2_spin.getValue());	
+	
 	
 	# collective_left for particle effect 
 	setprop("sim/multiplay/generic/float[13]", collective_left.getValue());
@@ -927,6 +963,29 @@ var update_mp_generics = func {
 	# landing lights state
 	setprop("sim/multiplay/generic/int[10]", l_light_state.getValue());
 	
+	# pushback state
+	var pbacks_mp = pback_state.getValue();
+	if (pbacks_mp != nil) {
+	setprop("sim/multiplay/generic/int[11]", pback_state.getValue());
+	} else {
+	setprop("sim/multiplay/generic/int[11]", 0);
+	}
+	
+	# paratrooper jump signal state
+	#var ptroup_mp = ptroup_jump_state.getValue();
+	#if (ptroup_mp != nil) {
+	#setprop("sim/multiplay/generic/int[12]", ptroup_jump_state.getValue());
+	#} else {
+	#setprop("sim/multiplay/generic/int[12]", 0);
+	#}
+	
+	# pushback position animation
+	var pbackpos_mp = pback_pos.getValue();
+	if (pbackpos_mp != nil) {
+	setprop("sim/multiplay/generic/float[16]", pback_pos.getValue());
+	} else {
+	setprop("sim/multiplay/generic/float[16]", 0);
+	}
 
 	
 }
