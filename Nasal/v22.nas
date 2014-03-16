@@ -53,8 +53,8 @@ var input_flaps = props.globals.getNode("controls/flight/flaps",1);
 var control_flaps = props.globals.getNode("sim/model/v22/inputflaps",1);
 var control_tilt = props.globals.getNode("sim/model/v22/inputtilt",1);
 var control_rotor_brake = props.globals.getNode("/controls/rotor/brake",1);
-#setprop (control_flaps,0); #debug
-#setprop (control_tilt,0); #debug
+#control_flaps.setValue(0); #debug
+#control_tilt.setValue(0); #debug
 var out_wing_ele = props.globals.getNode("sim/model/v22/wing/elevator");
 var out_wing_ail = props.globals.getNode("sim/model/v22/wing/aileron");
 var out_wing_rud = props.globals.getNode("sim/model/v22/wing/rudder");
@@ -66,9 +66,9 @@ var out_rotor_l_col = props.globals.getNode("sim/model/v22/rotor/left/collective
 
 var airspeed_kt = props.globals.getNode("/velocities/airspeed-kt");
 var rotor_pos = props.globals.getNode("rotors/main/blade[0]/position-deg",1);
-var actual_tilt = props.globals.getNode("sim/model/v22/tilt",1);; #0 up, 90 forward, range -10 ... 90
+var actual_tilt = props.globals.getNode("sim/model/v22/tilt",1); #0 up, 90 forward, range -10 ... 90
 var animation_tilt = props.globals.getNode("sim/model/v22/animation_tilt",1);
-setprop (actual_tilt,0);
+actual_tilt.setValue(0);
 var min_tilt = -10+0*100;
 var max_tilt = 90;
 var min_allowed_tilt = -10;
@@ -822,7 +822,7 @@ var blade1_pos = props.globals.getNode("rotors/main/blade[0]/position-deg", 1);
 var blade2_pos = props.globals.getNode("rotors/main/blade[1]/position-deg", 1);
 var blade3_pos = props.globals.getNode("rotors/main/blade[2]/position-deg", 1);
 var rotorangle = 0;
-setprop (rotor_step,0); #debug
+rotor_step.setValue(0); #debug
 var rotoranim_loop = func {
 	i = rotor_step.getValue();
 	if (i >= 0.0) {
